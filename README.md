@@ -20,31 +20,44 @@ These contain the functions get\_value\_and\_grad(Rcpp::NumericVector) and min\_
 The source code is not very clean at the moment (e.g. to return the values in Autodif classes to R there is a lot of messing about with converting into Rcpp-friendly classes). This can be improved using customised as and wrap functions.
 
 For example:
-<code>
-# Making the package
+
+Making the package
+<pre><code>
 library(devtools)
 library(Rcpp)
-# Used for comparing gradients
-library(numDeriv)
 load_all("RcppAutodif")
-# Check the Rcpp bit work
+</code></pre>
+
+Check the Rcpp bit work
+
+<pre><code>
 rcpp_hello_world()
-# The function we are playing with (replicated in the C++ code)
+</code></pre>
+
+The function we are playing with (replicated in the C++ code)
+
+<pre><code>
 func1 <- function(x){
     return(sum((x-1)^2))
 }
+</code></pre>
 
+Test the gradients
+<pre><code>
 x <- rnorm(10)
 out <- get_value_and_grad(x)
 out[["value"]]
 func1(x)
-# And the grads. Compare to numerical derivatives
+library(numDeriv)
 grad(func1,x)
 out[["grads"]]
+</code></pre>
 
-# Test minimiser
+Test the minimiser
+
+<pre><code>
 out <- min_test(15L)
 func1(out)
-</code>
+</code></pre>
 
 
