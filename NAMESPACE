@@ -1,0 +1,2 @@
+useDynLib(RcppAutodif)
+exportPattern("^[[:alpha:]]+")
