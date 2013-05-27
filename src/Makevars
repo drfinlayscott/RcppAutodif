@@ -1,6 +1,6 @@
 ## Use the R_HOME indirection to support installations of multiple R version
-PKG_CPPFLAGS = -I../inst/include -I../inst/include/admb -DUSE_LAPLACE -D__GNUDOS__ -Dlinux -DOPT_LIB -fpermissive
-PKG_CFLAGS = -I../inst/include -I../inst/include/admb -DUSE_LAPLACE -D__GNUDOS__ -Dlinux -DOPT_LIB -fpermissive
+PKG_CPPFLAGS = -I../inst/include -I../inst/include/autodif -DUSE_LAPLACE -D__GNUDOS__ -Dlinux -DOPT_LIB -fpermissive
+PKG_CFLAGS = -I../inst/include -I../inst/include/autodif -DUSE_LAPLACE -D__GNUDOS__ -Dlinux -DOPT_LIB -fpermissive
 PKG_LIBS = $(SUBLIBS) `$(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()"`
 
 ## As an alternative, one can also add this code in a file 'configure'
