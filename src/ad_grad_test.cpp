@@ -47,5 +47,3 @@ double test_func(dvar_vector x)
   return(value(z));
 }
 
-  // dvector is just a vector - so could be a NumericVector
-  // Easy to write wrappers

@@ -26,6 +26,16 @@ BEGIN_RCPP
     return Rcpp::wrap(__result);
 END_RCPP
 }
+// min_test_fail
+Rcpp::NumericVector min_test_fail(int nvar);
+RcppExport SEXP RcppAutodif_min_test_fail(SEXP nvarSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope __rngScope;
+    int nvar = Rcpp::as<int >(nvarSEXP);
+    Rcpp::NumericVector __result = min_test_fail(nvar);
+    return Rcpp::wrap(__result);
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP RcppAutodif_rcpp_hello_world() {

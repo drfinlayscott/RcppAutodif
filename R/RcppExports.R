@@ -9,6 +9,10 @@ min_test <- function(nvar) {
     .Call('RcppAutodif_min_test', PACKAGE = 'RcppAutodif', nvar)
 }
 
+min_test_fail <- function(nvar) {
+    .Call('RcppAutodif_min_test_fail', PACKAGE = 'RcppAutodif', nvar)
+}
+
 rcpp_hello_world <- function() {
     .Call('RcppAutodif_rcpp_hello_world', PACKAGE = 'RcppAutodif')
 }
